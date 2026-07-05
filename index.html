@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مندي دهب | Mandi Dahab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#ede3d0;
+    --charcoal:#181310;
+    --gold:#b6874a;
+    --gold-light:#e1bd80;
+    --bg1:#100c0a;
+    --bg2:#1b1310;
+    --bg3:#221812;
+    --border-soft:#8a6636;
+    --sub:#c9b795;
+  }
+  body.light{
+    --sand:#241c14;
+    --charcoal:#fffaf1;
+    --gold:#a8763a;
+    --gold-light:#8a5a26;
+    --bg1:#fdf8ee;
+    --bg2:#f6ecd8;
+    --bg3:#efe1c4;
+    --border-soft:#c9a870;
+    --sub:#6b5a3e;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(182,135,74,.18), transparent 55%),
+      linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg3) 100%);
+    color:var(--sand);
+    font-family:'Almarai', sans-serif;
+    display:flex; flex-direction:column; align-items:center;
+    text-align:center;
+    padding:50px 20px 40px;
+    transition:background .4s ease, color .4s ease;
+  }
+
+  .mode-toggle{
+    position:fixed; top:18px; left:18px;
+    display:flex; align-items:center; gap:8px;
+    padding:8px 16px;
+    border:1px solid var(--border-soft);
+    background:transparent;
+    color:var(--sand);
+    font-family:'Almarai', sans-serif;
+    font-size:.8rem;
+    cursor:pointer;
+    border-radius:30px;
+    transition:all .25s ease;
+  }
+  .mode-toggle:hover{border-color:var(--gold); background:rgba(182,135,74,.12);}
+
+  .logo{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+  }
+
+  .tagline{
+    margin-top:22px;
+    font-weight:800;
+    font-size:1.5rem;
+    color:var(--gold-light);
+    letter-spacing:.5px;
+  }
+  .tagline .en{
+    display:block;
+    font-weight:400;
+    font-size:.75rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--sub);
+    margin-top:6px;
+  }
+
+  .menu-btn{
+    margin-top:44px;
+    display:flex; flex-direction:column; align-items:center; gap:2px;
+    text-decoration:none;
+  }
+  .menu-btn .en-label{
+    font-size:.7rem;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .menu-btn .ar-label{
+    font-weight:800;
+    font-size:2.1rem;
+    color:var(--sand);
+    padding:10px 46px;
+    border:1px solid var(--gold);
+    margin-top:6px;
+    transition:all .25s ease;
+  }
+  .menu-btn:hover .ar-label{
+    background:var(--gold);
+    color:var(--charcoal);
+    transform:translateY(-3px);
+  }
+
+  .social{
+    margin-top:50px;
+    display:flex; gap:16px; flex-wrap:wrap; justify-content:center;
+  }
+  .social a{
+    display:flex; align-items:center; gap:8px;
+    padding:12px 22px;
+    border:1px solid var(--border-soft);
+    color:var(--sand);
+    font-size:.9rem;
+    text-decoration:none;
+    transition:all .25s ease;
+  }
+  .social a:hover{border-color:var(--gold); background:rgba(182,135,74,.12); transform:translateY(-2px);}
+  .social svg{width:18px; height:18px; fill:var(--gold-light);}
+
+  .phones{
+    margin-top:46px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .phones a{
+    direction:ltr;
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--gold-light);
+    text-decoration:none;
+    letter-spacing:1px;
+  }
+  .phones .label{
+    font-size:.8rem;
+    color:var(--sub);
+    margin-bottom:4px;
+  }
+</style>
+</head>
+<body>
+
+  <button class="mode-toggle" onclick="toggleMode()">
+    <span id="mode-icon">☀️</span>
+    <span id="mode-text">الوضع الفاتح</span>
+  </button>
+
+  <img class="logo" src="dhab.jpeg" alt="شعار مندي دهب">
+
+  <div class="tagline">
+    أصالة البدو .. مذاق لا يُنسى
+    <span class="en">Bedouin Authenticity, Unforgettable Taste</span>
+  </div>
+
+  <a href="mandi-dahab-menu.html" class="menu-btn">
+    <span class="en-label">Menu</span>
+    <span class="ar-label">منيو</span>
+  </a>
+
+  <div class="social">
+    <a href="https://www.facebook.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
+      فيسبوك
+    </a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.16.55.55.9 1.11 1.16 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.16 1.77 4.9 4.9 0 0 1-1.77 1.16c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.16 4.9 4.9 0 0 1-1.16-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.16-1.77A4.9 4.9 0 0 1 5.46.52c.64-.25 1.37-.42 2.43-.47C8.94.01 9.28 0 12 0Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.25A3.25 3.25 0 1 1 12 6.75a3.25 3.25 0 0 1 0 6.5ZM18.4 4.6a1.17 1.17 0 1 1-2.34 0 1.17 1.17 0 0 1 2.34 0Z"/></svg>
+      انستجرام
+    </a>
+    <a href="https://www.tiktok.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M16.6 5.82c-.83-.72-1.34-1.76-1.4-2.9h-3.03v13.44a2.6 2.6 0 1 1-1.83-2.48v-3.1a5.6 5.6 0 1 0 4.86 5.55V9.3a6.6 6.6 0 0 0 3.9 1.26V7.5c-.9 0-1.75-.28-2.5-.7Z"/></svg>
+      تيك توك
+    </a>
+  </div>
+
+  <div class="phones">
+    <div>
+      <div class="label">للحجز والاستفسار وخدمة التوصيل</div>
+      <a href="tel:01040655750">010 4065 5750</a> &nbsp;|&nbsp;
+      <a href="tel:01023010111">010 2301 0111</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode(){
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      document.getElementById('mode-icon').textContent = isLight ? '🌙' : '☀️';
+      document.getElementById('mode-text').textContent = isLight ? 'الوضع الداكن' : 'الوضع الفاتح';
+    }
+  </script>
+
+</body>
+</html>
