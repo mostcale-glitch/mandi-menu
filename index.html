@@ -83,10 +83,18 @@
     margin-top:6px;
   }
 
-  .menu-btn{
+  .actions{
     margin-top:44px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+  }
+
+  .menu-btn{
     display:flex; flex-direction:column; align-items:center; gap:2px;
     text-decoration:none;
+    width:260px;
   }
   .menu-btn .en-label{
     font-size:.7rem;
@@ -95,18 +103,32 @@
     color:var(--gold);
   }
   .menu-btn .ar-label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     font-weight:800;
     font-size:2.1rem;
     color:var(--sand);
-    padding:10px 46px;
+    padding:10px 20px;
     border:1px solid var(--gold);
     margin-top:6px;
+    width:100%;
     transition:all .25s ease;
+  }
+  .menu-btn .ar-label svg{
+    width:28px; height:28px;
+    fill:var(--gold-light);
+    flex-shrink:0;
+    transition:fill .25s ease;
   }
   .menu-btn:hover .ar-label{
     background:var(--gold);
     color:var(--charcoal);
     transform:translateY(-3px);
+  }
+  .menu-btn:hover .ar-label svg{
+    fill:var(--charcoal);
   }
 
   .social{
@@ -142,6 +164,17 @@
     color:var(--sub);
     margin-bottom:4px;
   }
+
+  @media (max-width:480px){
+    .menu-btn .ar-label{
+      font-size:1.5rem;
+      padding:8px 20px;
+    }
+    .menu-btn .ar-label svg{
+      width:22px; height:22px;
+    }
+    .actions{ gap:14px; }
+  }
 </style>
 </head>
 <body>
@@ -158,13 +191,26 @@
     <span class="en">Bedouin Authenticity, Unforgettable Taste</span>
   </div>
 
-  <a href="mandi-dahab-menu.html" class="menu-btn">
-    <span class="en-label">Menu</span>
-    <span class="ar-label">منيو</span>
-  </a>
+  <div class="actions">
+    <a href="mandi-dahab-menu.html" class="menu-btn">
+      <span class="en-label">Menu</span>
+      <span class="ar-label">
+        <svg viewBox="0 0 24 24"><path d="M8.1 2v7.24c0 .69-.56 1.26-1.25 1.26H5.9V22H4V2h1.9v7h.95V2h1.25Zm7.9 8.5c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3Zm-1 1.5c-1.93 0-3.5 1.57-3.5 3.5V22h1.9v-6.5c0-.66.31-1.24.8-1.62V22h1.6v-8.12c.49.38.8.96.8 1.62V22h1.9v-6.5c0-1.93-1.57-3.5-3.5-3.5h-.01Z"/></svg>
+        منيو
+      </span>
+    </a>
+
+    <a href="mandi-dahab-TEKAWE.html" class="menu-btn">
+      <span class="en-label">Takeaway</span>
+      <span class="ar-label">
+        <svg viewBox="0 0 24 24"><path d="M5 3h9v2h1.5l2 3H21a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1h-.15a2.5 2.5 0 0 1-4.7 0H9.85a2.5 2.5 0 0 1-4.7 0H4a1 1 0 0 1-1-1V8h1V6h6V5H5V3Zm2 12.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm10.5 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5ZM16.5 9v3.25h3.5V10.5l-1.3-2H16.5Z"/></svg>
+      تيك أواي
+      </span>
+    </a>
+  </div>
 
   <div class="social">
-    <a href="https://www.facebook.com/people/%D9%85%D8%B7%D8%B9%D9%85-%D9%85%D9%86%D8%AF%D9%8A-%D8%AF%D9%87%D8%A8/61563613436158/" target="_blank" rel="noopener">
+    <a href="https://www.facebook.com" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
       فيسبوك
     </a>
@@ -172,7 +218,7 @@
       <svg viewBox="0 0 24 24"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.16.55.55.9 1.11 1.16 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.16 1.77 4.9 4.9 0 0 1-1.77 1.16c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.16 4.9 4.9 0 0 1-1.16-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.16-1.77A4.9 4.9 0 0 1 5.46.52c.64-.25 1.37-.42 2.43-.47C8.94.01 9.28 0 12 0Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.25A3.25 3.25 0 1 1 12 6.75a3.25 3.25 0 0 1 0 6.5ZM18.4 4.6a1.17 1.17 0 1 1-2.34 0 1.17 1.17 0 0 1 2.34 0Z"/></svg>
       انستجرام
     </a>
-    <a href="https://www.tiktok.com" target="_blank" rel="noopener">
+    <a href="https://vm.tiktok.com/ZS9MFd1hkvkSS-8oe1V/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M16.6 5.82c-.83-.72-1.34-1.76-1.4-2.9h-3.03v13.44a2.6 2.6 0 1 1-1.83-2.48v-3.1a5.6 5.6 0 1 0 4.86 5.55V9.3a6.6 6.6 0 0 0 3.9 1.26V7.5c-.9 0-1.75-.28-2.5-.7Z"/></svg>
       تيك توك
     </a>
@@ -181,8 +227,8 @@
   <div class="phones">
     <div>
       <div class="label">للحجز والاستفسار وخدمة التوصيل</div>
-      <a href="tel:01040655750"dir="ltr">010 4065 5750</a>&nbsp;|&nbsp;
-      <a href="tel:01023010111"dir="ltr">010 2301 0111</a>
+      <a href="tel:01040655750" dir="ltr">010 4065 5750</a> &nbsp;|&nbsp;
+      <a href="tel:01023010111" dir="ltr">010 2301 0111</a>
     </div>
   </div>
 
